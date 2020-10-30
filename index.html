@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maryland EXCELS Program</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="fontawesome/css/all.css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="banner">
+            <img src="https://training.excels.marylandexcels.org/img/logo-interface.png?version=6f1eb885" alt="Maryland EXCELS Logo">
+            <img src="https://training.excels.marylandexcels.org/img/md_accred_simple.png?version=6f1eb885" alt="Maryland Accreditation Logo">
+        </div>
+        <div id="header">
+            <h1>Welcome to Maryland EXCELS</h1>
+            <h2>Log in or Create a User Account below.  For more information, visit the <a href="//marylandexcels.org">Maryland EXCELS Website</a> or the <a href="http://pd.improvingquality.org/marylandexcels/3347">Maryland EXCELS Toolkit</a>.</h2>
+        </div>
+        <div id="main">
+            <div id="menu">
+                <button id="login-menu-item" class="active" onclick="menuItemClicked('login')">Log in</button>
+                <button id="register-menu-item" onclick="menuItemClicked('register')">Register</button>
+            </div>
+            <div id="login-page">
+                <div id="social">
+                    <h3>Log in with social media account</h3>
+                    <button> <i class="fab fa-facebook-f"></i>Connect with Facebook</button>
+                    <button> <i class="fab fa-google-plus-g"></i>Connect with Google</button>
+                </div>
+                <div id="excels">
+                    <h3>Log in with Maryland EXCELS account</h3>
+                    <form>
+                        <label for="email">Email</label>
+                        <input required type="email" name="email" id="email" placeholder="Email Address" ><br>
+                        <label for="password">Password</label>
+                        <input required type="text" name="password" id="password" placeholder="Password" maxlength="20"><br>
+                        <button class="form-button">Log in</button>
+                        <div id="login-links">
+                            <a id="reset-password">
+                                Reset/forgot my password
+                            </a>
+                            <a id="help">
+                                Need help?
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="register-page" style="display: none">
+                <div id="register-container">
+                    <h3>Create a Maryland EXCELS account</h3>
+                    <form onsubmit="return validateForm()">
+                        <label for="first-name">First Name</label>
+                        <input required type="text" name="first-name" id="first-name" minlength="2" maxlength="20"><br>
+                        <label for="last-name">Last Name</label>
+                        <input required type="text" name="last-name" id="last-name" minlength="2" maxlength="20"><br>
+                        <label for="email-address">Email</label>
+                        <input required type="email" name="email-address" id="email-address"><br>
+                        <label for="create-password">Create a Password</label>
+                        <input required type="password" name="password" id="create-password"><br>
+                        <label for="confirm-password">Retype Password</label>
+                        <input required type="password" name="confirm-password" id="confirm-password"><br>
+                        <button class="form-button">Create a User Account</button>
+                        <div>
+                        By creating a user account, you accept the Maryland EXCELS Terms and Conditions and Privacy Policy.
+                        </div>
+                        <div id="password-validation">
+                        Passwords must:
+                            <ul id="validation-rules">
+                                <li id="pw-length" class="invalid">Be at least 8 characters long</li>
+                                <li id="pw-upper" class="invalid">Contain at least 1 upper case letter</li>
+                                <li id="pw-lower" class="invalid">Contain at least 1 lower case letter</li>
+                                <li id="pw-number" class="invalid">Contain at least 1 number</li>
+                                <li id="pw-match" class="invalid">password and confirm password fields match</li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
